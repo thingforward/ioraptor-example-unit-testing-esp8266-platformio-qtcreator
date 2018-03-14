@@ -11,14 +11,6 @@ Build system optimized for use by PlatformIO and QtCreator.
 
 ## Build
 
-fetch dependencies:
-
-```bash
-$ cd lib
-$ git clone https://github.com/Seeed-Studio/OLED_Display_128X64.git
-$ cd ..
-```
-
 Build/run, by environment:
 
 **NodeMCUv2**
