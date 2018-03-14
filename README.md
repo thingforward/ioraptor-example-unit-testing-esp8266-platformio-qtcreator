@@ -51,4 +51,5 @@ $ pio test -e native
 (C)opyright Digital Incubation & Growth GmbH, 2018.
 GPLv2, see LICENSE
 
-Includes Seeed-Studio/OLED_Display_128X64 from [https://github.com/Seeed-Studio/OLED_Display_128X64](https://github.com/Seeed-Studio/OLED_Display_128X64) 
+Includes Seeed-Studio/OLED_Display_128X64 from [https://github.com/Seeed-Studio/OLED_Display_128X64](https://github.com/Seeed-Studio/OLED_Display_128X64),
+written by Frankie Chu for seeed studio and licensed under the GPL v2 License.
