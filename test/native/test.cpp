@@ -50,18 +50,20 @@ void test_display_level_line_shows_allowed_digits_only() {
     p_mock_display->setup();
 
     p_selector = new LevelSelector(p_mock_display);
-    //p_selector->setLevel(37);
-    //p_selector->displayLevel();
+    p_selector->setLevel(37);   // set to 37, but has to show 35
+    p_selector->displayLevel();
 
     bool b_is_empty_or_digit = true;
     int num_digits = 0;
+    char last_digit = '\0';
     for ( int i = 0; i < 10; i++) {
         int c = p_mock_display->getCharAt(i,2);
         if ( c != 0 && c != 32 && !( c >= '0' && c <= '9')) {
             b_is_empty_or_digit = false;
         }
-        if (c == '0' || c == '5') {
+        if (c >= '0' && c <= '9') {
             num_digits++;
+            last_digit = c;
         }
     }
 
@@ -71,6 +73,13 @@ void test_display_level_line_shows_allowed_digits_only() {
     // make sure there is at least 1 digit, but not more than 3 (=100)
     TEST_ASSERT_TRUE_MESSAGE((num_digits>0), "No digits found in number line");
     TEST_ASSERT_TRUE_MESSAGE((num_digits<=3), "Too many digits found in number line");
+
+    // make sure the last digit is either 0 or 5
+    TEST_ASSERT_TRUE_MESSAGE((last_digit == '0' || last_digit == '5'), "Last digit not 0 or 5" )
+
+    // or:
+    TEST_ASSERT_EQUAL(p_mock_display->getCharAt(1,2), '3');
+    TEST_ASSERT_EQUAL(p_mock_display->getCharAt(2,2), '5');
 
     delete p_selector;
     delete p_mock_display;

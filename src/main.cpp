@@ -21,10 +21,11 @@ void setup() {
 
 void loop() {
   sleep(1);
-  int l = (rand() % 1024);
+  int l = (rand() % 100);
   p_selector->setLevel(l);
   p_selector->displayLevel();
 
+  // all values must be ..%5 == 0
   p_mock_display->dump();
 
 }
