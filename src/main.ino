@@ -1,7 +1,7 @@
 #ifdef ARDUINO
 #ifndef UNIT_TEST
 
-#include "arduino.h"
+#include <Arduino.h>
 #include "seeedoleddisplay.h"
 #include "levelselector.h"
 
