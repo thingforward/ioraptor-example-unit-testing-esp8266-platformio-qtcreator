@@ -1,0 +1,19 @@
+dependencies:
+    pre:
+        # Install the latest stable PlatformIO
+        - sudo pip install -U platformio
+        # preinstall esp libs and arduinoJson
+        - platformio platform install espressif8266
+        - platformio lib -g install ArduinoJson
+
+compile:
+  override:
+    - pio run -e nodemcuv2
+
+test:
+  override:
+    - pio test -e native
+
+          #test:
+          #    override:
+          #        - platformio ci -P -v --board=nodemcuv2 --lib lib/ src/ 
