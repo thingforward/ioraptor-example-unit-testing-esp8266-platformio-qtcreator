@@ -9,11 +9,11 @@ dependencies:
 compile:
   override:
     - pio run -e nodemcuv2
-
+          
 test:
   override:
     - pio test -e native
 
-          #test:
-          #    override:
-          #        - platformio ci -P -v --board=nodemcuv2 --lib lib/ src/ 
+deployment:
+  override:
+    - pio remote flash 
